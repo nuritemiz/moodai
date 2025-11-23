@@ -58,8 +58,8 @@ Tüm veriler lokal olarak saklanır ve kullanıcı istediği zaman geçmiş kay�
 
 1. **Projeyi klonlayın:**
 ```bash
-git clone https://github.com/[username]/MoodAI.git
-cd MoodAI
+git clone https://github.com/nuritemiz/moodai.git
+cd moodai
 ```
 
 2. **Bağımlılıkları yükleyin:**
@@ -67,17 +67,19 @@ cd MoodAI
 npm install
 ```
 
-3. **API Key'lerini ayarlayın:**
+3. **Environment Variables ayarlayın:**
 
-`src/api/sentimentApi.js` dosyasında API key'lerinizi güncelleyin:
+`.env` dosyası oluşturun (`.env.example` dosyasını kopyalayın):
 
-// Hugging Face API Token (ücretsiz)
-// https://huggingface.co/settings/tokens adresinden alabilirsiniz
-const HF_API_TOKEN = 'hf_YOUR_TOKEN_HERE';
+```bash
+cp .env.example .env
+```
 
-// Groq API Key (ücretsiz)
-// https://console.groq.com adresinden alabilirsiniz
-const GROQ_API_KEY = 'gsk_YOUR_KEY_HERE';
+`.env` dosyasını düzenleyin ve API key'lerinizi ekleyin:
+
+```
+HF_API_TOKEN=your_huggingface_token_here
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
 **API Key Alma Rehberi:**
@@ -93,8 +95,6 @@ const GROQ_API_KEY = 'gsk_YOUR_KEY_HERE';
 4. **Uygulamayı başlatın:**
 ```bash
 npm start
-# veya
-expo start
 ```
 
 
@@ -109,11 +109,20 @@ expo start
    - "Geçmiş Kayıtlar" butonuna tıklayın
    - Emoji ve renklerle duygu durumlarını ayırt edin
 
+## 🔒 Güvenlik
+
+⚠️ **ÖNEMLİ:** API key'lerinizi asla GitHub'a yüklemeyin!
+
+- `.env` dosyası `.gitignore`'da bulunur ve commit edilmez
+- `.env.example` dosyasını referans olarak kullanın
+- Kendi API key'lerinizi `.env` dosyasında saklayın
+
 
 ## Proje Yapısı
 
 ```
 MoodAI/
+├── .env.example                    # Environment variables örneği
 ├── App.js                          # Ana uygulama bileşeni & navigasyon
 ├── src/
 │   ├── api/
