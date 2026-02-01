@@ -109,13 +109,7 @@ npm start
    - "Geçmiş Kayıtlar" butonuna tıklayın
    - Emoji ve renklerle duygu durumlarını ayırt edin
 
-##  Güvenlik
 
-**ÖNEMLİ:** API key'lerinizi asla GitHub'a yüklemeyin!
-
-- `.env` dosyası `.gitignore`'da bulunur ve commit edilmez
-- `.env.example` dosyasını referans olarak kullanın
-- Kendi API key'lerinizi `.env` dosyasında saklayın
 
 
 ## Proje Yapısı
